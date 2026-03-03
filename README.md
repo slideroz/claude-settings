@@ -39,3 +39,4 @@ git push
 ```
 
 Changes take effect immediately (the symlinks mean Claude reads straight from this directory).
+# claude-settings
