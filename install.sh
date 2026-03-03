@@ -6,7 +6,7 @@ CLAUDE_DIR="$HOME/.claude"
 
 mkdir -p "$CLAUDE_DIR"
 
-files=(settings.json statusline.sh)
+files=(settings.json settings.local.json statusline.sh)
 
 for f in "${files[@]}"; do
   target="$CLAUDE_DIR/$f"
@@ -22,3 +22,5 @@ for f in "${files[@]}"; do
 done
 
 echo "Done. Claude settings installed."
+echo ""
+echo "Tip: run ./check.sh to see if any new config needs to be backed up."

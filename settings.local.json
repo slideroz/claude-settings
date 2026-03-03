@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ln:*)",
+      "Bash(~/claude-settings/check.sh:*)"
+    ]
+  }
+}
