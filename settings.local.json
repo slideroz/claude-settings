@@ -3,7 +3,8 @@
     "allow": [
       "Bash(ln:*)",
       "Bash(~/claude-settings/check.sh:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git:*)"
     ]
   }
 }
