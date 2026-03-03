@@ -16,7 +16,7 @@ The files in `~/.claude/` are symlinks pointing here, so any edits are immediate
 ## Install on a new machine
 
 ```bash
-git clone git@github.com:oussamabenbila/claude-settings.git ~/claude-settings
+git clone git@github.com:slideroz/claude-settings.git ~/claude-settings
 cd ~/claude-settings
 chmod +x install.sh
 ./install.sh
