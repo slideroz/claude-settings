@@ -7,8 +7,7 @@ Global [Claude Code](https://github.com/anthropics/claude-code) configuration, b
 | File | Description |
 |------|-------------|
 | `settings.json` | Main Claude Code settings (default mode, status line config, etc.) |
-| `statusline-command.sh` | Status line script — shows model, directory, context %, cost, and duration |
-| `statusline.sh` | Alternate/backup status line script |
+| `statusline.sh` | Status line script — shows model, directory, context %, cost, and duration |
 | `install.sh` | Setup script for new machines |
 
 The files in `~/.claude/` are symlinks pointing here, so any edits are immediately tracked by git.

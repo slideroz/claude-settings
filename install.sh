@@ -6,7 +6,7 @@ CLAUDE_DIR="$HOME/.claude"
 
 mkdir -p "$CLAUDE_DIR"
 
-files=(settings.json statusline-command.sh statusline.sh)
+files=(settings.json statusline.sh)
 
 for f in "${files[@]}"; do
   target="$CLAUDE_DIR/$f"
