@@ -5,7 +5,9 @@
       "Bash(~/claude-settings/check.sh:*)",
       "Bash(grep:*)",
       "Bash(git:*)",
-      "Bash(ls /Users/oussamabenbila/.claude/settings*)"
+      "Bash(ls /Users/oussamabenbila/.claude/settings*)",
+      "Bash(du -sh ~/.claude/*/)",
+      "Bash(find /Users/oussamabenbila/.claude -type f -name *.md)"
     ]
   }
 }

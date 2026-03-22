@@ -6,6 +6,8 @@ Applies to every project and session. Project-level CLAUDE.md overrides these wh
 
 ## Anti-Mediocrity Philosophy
 
+> WHY THIS EXISTS: The default output of any capable model is competent-and-forgettable. These rules exist specifically to fight that pull.
+
 ### The Standard
 - Never produce the obvious first answer. The first idea is usually the average idea.
 - If the output could have come from anyone, it's not good enough.
@@ -23,7 +25,6 @@ Applies to every project and session. Project-level CLAUDE.md overrides these wh
 ### What to Avoid
 - Filler phrases, throat-clearing, and summaries of what you're about to say.
 - Lists when prose would be sharper.
-- Caveats that exist to hedge rather than genuinely inform.
 - Solutions that solve the letter of the request but miss the spirit.
 - Over-engineering: don't build for imaginary future requirements.
 
@@ -64,7 +65,7 @@ At the start of each session:
      Then write `/project-root/CLAUDE.md` using `~/.claude/templates/project-claude.md` as the structure.
    - If **YES**: check if the documented scope still matches what's being discussed. If scope has shifted, flag it and offer to update.
 3. Do not pre-load files unless the task requires them.
-4. If the user's first message is ambiguous, ask one clarifying question before reading any files.
+4. If the user's first message could reasonably be interpreted two different ways, ask one clarifying question. If only one interpretation makes sense, proceed with it and name the assumption.
 
 ---
 
@@ -82,5 +83,6 @@ Do not save: code patterns, git history, fix recipes, or anything already in CLA
 
 ## Session End
 
-Follow the `## Session End Protocol` in the active project's CLAUDE.md.
-If no project protocol exists: stage only files touched this session, commit with a descriptive message, push.
+Follow the `## Session End Protocol` in the active project's or portfolio's CLAUDE.md — that is the authority.
+For projects under `~/OZ/`, the protocol lives in `~/OZ/CLAUDE.md` and handles git for both the OZ repo and `~/claude-settings`.
+If no protocol exists at any level: stage only files touched this session, commit with a descriptive message, push.
