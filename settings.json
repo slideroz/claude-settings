@@ -8,7 +8,7 @@
   },
   "voiceEnabled": true,
   "hooks": {
-    "PreToolUse": [
+    "UserPromptSubmit": [
       {
         "matcher": "",
         "hooks": [
