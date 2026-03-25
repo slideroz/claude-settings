@@ -56,8 +56,9 @@ Applies to every project and session. Project-level CLAUDE.md overrides these wh
 ## Session Start
 
 At the start of each session:
-1. Read `MEMORY.md` and the active project's `CLAUDE.md` — nothing else until the task is clear.
-2. Check if `CLAUDE.md` exists in the current project root.
+1. Run `git pull origin main` in the active project's root directory — before reading any files or doing any work. This syncs the latest changes from GitHub in case work was done on another machine.
+2. Read `MEMORY.md` and the active project's `CLAUDE.md` — nothing else until the task is clear.
+3. Check if `CLAUDE.md` exists in the current project root.
    - If **NO**: ask these three questions before doing anything else:
      1. Who is the audience (role, sophistication, what they care about)?
      2. What is the voice/register for this project?
@@ -83,6 +84,6 @@ Do not save: code patterns, git history, fix recipes, or anything already in CLA
 
 ## Session End
 
-Follow the `## Session End Protocol` in the active project's or portfolio's CLAUDE.md — that is the authority.
-For projects under `~/OZ/`, the protocol lives in `~/OZ/CLAUDE.md` and handles git for both the OZ repo and `~/claude-settings`.
-If no protocol exists at any level: stage only files touched this session, commit with a descriptive message, push.
+Follow the `## Session End Protocol` in the active project's CLAUDE.md — that is the authority.
+Each project under `~/OZ/` has its own standalone protocol targeting its own git repo.
+If no protocol exists: stage only files touched this session, commit with a descriptive message, push.
