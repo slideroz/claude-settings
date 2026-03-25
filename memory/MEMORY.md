@@ -36,5 +36,3 @@ All projects at `/Users/oussamabenbila/OZ/`. Root index: `/OZ/CLAUDE.md`.
 - No emojis
 - Concise, direct output — tables preferred over prose
 - Sessions always end with "log and close session"
-
-<!-- sync-test -->
