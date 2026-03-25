@@ -61,6 +61,7 @@ At the start of each session:
    git -C ~/OZ/<Project> pull origin main
    git -C ~/claude-settings pull origin main
    ```
+   Both are no-ops if already up to date — always run them, git handles the rest.
 2. Read `MEMORY.md` and the active project's `CLAUDE.md` — nothing else until the task is clear.
 3. Check if `CLAUDE.md` exists in the current project root.
    - If **NO**: ask these three questions before doing anything else:
