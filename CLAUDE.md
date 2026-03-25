@@ -53,25 +53,42 @@ Applies to every project and session. Project-level CLAUDE.md overrides these wh
 
 ---
 
+## Environment
+
+Two execution environments with different capabilities:
+
+| | CLI (local machine) | Web (browser) |
+|-|---------------------|---------------|
+| Repo path | `~/OZ/<ProjectName>/` | `/home/user/<repo-name>/` |
+| Multi-repo access | Yes | No — one repo per session |
+| claude-settings | `~/claude-settings/` available | Not available |
+| Push to main | Direct | No — pushes to branch, PR required |
+| Memory / skills | Full access | Read-only via loaded context |
+
+**Detect web:** run `pwd`. If output starts with `/home/user/`, follow Web protocols below.
+
+---
+
 ## Session Start
 
-At the start of each session:
-1. Pull the active project and claude-settings — before reading any files or doing any work:
+**CLI:**
+1. Pull the active project and claude-settings before any work:
    ```
    git -C ~/OZ/<Project> pull origin main
    git -C ~/claude-settings pull origin main
    ```
-   Both are no-ops if already up to date — always run them, git handles the rest.
-2. Read `MEMORY.md` and the active project's `CLAUDE.md` — nothing else until the task is clear.
-3. Check if `CLAUDE.md` exists in the current project root.
-   - If **NO**: ask these three questions before doing anything else:
-     1. Who is the audience (role, sophistication, what they care about)?
-     2. What is the voice/register for this project?
-     3. What does mediocrity look like here specifically?
-     Then write `/project-root/CLAUDE.md` using `~/.claude/templates/project-claude.md` as the structure.
-   - If **YES**: check if the documented scope still matches what's being discussed. If scope has shifted, flag it and offer to update.
-3. Do not pre-load files unless the task requires them.
-4. If the user's first message could reasonably be interpreted two different ways, ask one clarifying question. If only one interpretation makes sense, proceed with it and name the assumption.
+2. Read `MEMORY.md` and the active project's `CLAUDE.md`.
+3. Check if `CLAUDE.md` exists in the current project root — if not, ask the three setup questions before proceeding.
+4. If the user's first message could be interpreted two ways, ask one clarifying question.
+
+**Web:**
+1. Pull the current repo only:
+   ```
+   git pull origin main
+   ```
+   (claude-settings not available — skip that step entirely)
+2. Read `CLAUDE.md` in the current repo.
+3. Proceed with the task. Do not attempt to access other repos or claude-settings.
 
 ---
 
@@ -89,8 +106,8 @@ Do not save: code patterns, git history, fix recipes, or anything already in CLA
 
 ## Session End
 
-Follow the `## Session End Protocol` in the active project's CLAUDE.md for the project repo.
-After pushing the project, always check claude-settings for uncommitted changes (skills, commands, memory, settings):
+**CLI:**
+Follow the `## Session End Protocol` in the active project's CLAUDE.md. After pushing the project, check claude-settings:
 ```
 git -C ~/claude-settings status --short
 ```
@@ -100,4 +117,12 @@ git -C ~/claude-settings add -A
 git -C ~/claude-settings commit -m "session: <describe what changed>"
 git -C ~/claude-settings push
 ```
-If no project protocol exists: stage only files touched, commit with a descriptive message, push.
+
+**Web:**
+Commit and push to the current branch only. Do not attempt to push to main or access claude-settings.
+```
+git add <files touched>
+git commit -m "<Project>: <description>"
+git push origin HEAD
+```
+This creates a PR branch. The user will merge from their desktop CLI.
