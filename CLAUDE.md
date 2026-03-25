@@ -56,7 +56,11 @@ Applies to every project and session. Project-level CLAUDE.md overrides these wh
 ## Session Start
 
 At the start of each session:
-1. Run `git pull origin main` in the active project's root directory — before reading any files or doing any work. This syncs the latest changes from GitHub in case work was done on another machine.
+1. Pull the active project and claude-settings — before reading any files or doing any work:
+   ```
+   git -C ~/OZ/<Project> pull origin main
+   git -C ~/claude-settings pull origin main
+   ```
 2. Read `MEMORY.md` and the active project's `CLAUDE.md` — nothing else until the task is clear.
 3. Check if `CLAUDE.md` exists in the current project root.
    - If **NO**: ask these three questions before doing anything else:
@@ -84,6 +88,15 @@ Do not save: code patterns, git history, fix recipes, or anything already in CLA
 
 ## Session End
 
-Follow the `## Session End Protocol` in the active project's CLAUDE.md — that is the authority.
-Each project under `~/OZ/` has its own standalone protocol targeting its own git repo.
-If no protocol exists: stage only files touched this session, commit with a descriptive message, push.
+Follow the `## Session End Protocol` in the active project's CLAUDE.md for the project repo.
+After pushing the project, always check claude-settings for uncommitted changes (skills, commands, memory, settings):
+```
+git -C ~/claude-settings status --short
+```
+If anything changed:
+```
+git -C ~/claude-settings add -A
+git -C ~/claude-settings commit -m "session: <describe what changed>"
+git -C ~/claude-settings push
+```
+If no project protocol exists: stage only files touched, commit with a descriptive message, push.
