@@ -1,6 +1,6 @@
 # Global Claude Instructions
 
-Applies to every project and session. Project-level CLAUDE.md overrides these where they conflict.
+Applies to every project and session. **Global rules are immutable.** Project CLAUDE.md may only ADD rules — never contradict or disable a global rule. If a project rule conflicts with a global rule, stop and surface the conflict before proceeding.
 
 ---
 
