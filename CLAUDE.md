@@ -51,6 +51,10 @@ Applies to every project and session. Project-level CLAUDE.md overrides these wh
 - Prefer `Glob` over broad directory reads when locating files by name.
 - Tables over prose for structured data.
 
+## Anti-Bloat Gate
+
+Before adding anything to any CLAUDE.md or memory file: does this belong in a skill, a reference file, or Active State instead? If it doesn't fit those three buckets, it doesn't get added. A new rule replaces an existing one or it doesn't get added.
+
 ---
 
 ## Environment
@@ -71,24 +75,35 @@ Two execution environments with different capabilities:
 
 ## Session Start
 
-**CLI:**
-1. Pull the active project and claude-settings before any work:
-   ```
-   git -C ~/OZ/<Project> pull origin main
-   git -C ~/claude-settings pull origin main
-   ```
-2. Read `MEMORY.md` and the active project's `CLAUDE.md`.
-3. Check if `CLAUDE.md` exists in the current project root — if not, ask the three setup questions before proceeding.
-4. If the user's first message could be interpreted two ways, ask one clarifying question.
+**CLI — pull every active project before any work:**
+```
+git -C ~/OZ/YoutubeTrends pull origin main
+git -C ~/OZ/AmazonKDP pull origin main
+git -C ~/OZ/MobileApps pull origin main
+git -C ~/OZ/PublicDomain pull origin main
+git -C ~/OZ/DataMoatResearch pull origin main
+git -C ~/OZ/ProductDesigner pull origin main
+git -C ~/OZ/WFA pull origin main
+git -C ~/OZ/CopyrightIssue pull origin main
+git -C ~/OZ/EtsyShop pull origin main
+git -C ~/OZ/PODStudio pull origin main
+git -C ~/OZ/ConsultationTracker pull origin main
+git -C ~/OZ/ECP pull origin main
+git -C ~/claude-settings pull origin main
+```
+When a new project is added to the Active Projects table, add it to this list.
+
+If merge conflicts in any project: resolve the file, remove conflict markers, `git -C ~/OZ/<Project> add <file>` then commit.
+
+Then:
+1. Read `MEMORY.md` and the active project's `CLAUDE.md`.
+2. Check if `CLAUDE.md` exists in the current project root — if not, ask the three setup questions before proceeding.
+3. If the user's first message could be interpreted two ways, ask one clarifying question.
 
 **Web:**
-1. Pull the current repo only:
-   ```
-   git pull origin main
-   ```
-   (claude-settings not available — skip that step entirely)
+1. Pull the current repo only: `git pull origin main` (claude-settings not available — skip)
 2. Read `CLAUDE.md` in the current repo.
-3. Proceed with the task. Do not attempt to access other repos or claude-settings.
+3. Proceed. Do not attempt to access other repos or claude-settings.
 
 ---
 
@@ -106,23 +121,38 @@ Do not save: code patterns, git history, fix recipes, or anything already in CLA
 
 ## Session End
 
-**CLI:**
-Follow the `## Session End Protocol` in the active project's CLAUDE.md. After pushing the project, check claude-settings:
-```
-git -C ~/claude-settings status --short
-```
-If anything changed:
-```
-git -C ~/claude-settings add -A
-git -C ~/claude-settings commit -m "session: <describe what changed>"
-git -C ~/claude-settings push
-```
+**CLI** — triggered by "log and close session" or "update repo":
 
-**Web:**
-Commit and push to the current branch only. Do not attempt to push to main or access claude-settings.
+1. For each project repo touched this session:
+   ```
+   git -C ~/OZ/<Project> add <files touched>
+   git -C ~/OZ/<Project> commit -m "<project>: <description>"
+   git -C ~/OZ/<Project> push origin main
+   ```
+2. If OZ portfolio-level files changed (CLAUDE.md, .gitignore):
+   ```
+   git -C ~/OZ add CLAUDE.md .gitignore
+   git -C ~/OZ commit -m "OZ: <description>"
+   git -C ~/OZ push origin main
+   ```
+3. Check claude-settings for uncommitted changes:
+   ```
+   git -C ~/claude-settings status --short
+   ```
+   If changes exist (add new global assets with `cd ~/claude-settings && ./add.sh <name>` first):
+   ```
+   git -C ~/claude-settings add -A
+   git -C ~/claude-settings commit -m "session: <describe what changed>"
+   git -C ~/claude-settings push
+   ```
+4. Report: list all repos committed, files changed, and commit messages.
+
+Project CLAUDE.md Session End Protocols add project-specific pre-commit steps only (e.g., "update docs/progress.md"). They do not restate this protocol.
+
+**Web** — commit to current branch only. Do not push to main or access claude-settings.
 ```
 git add <files touched>
 git commit -m "<Project>: <description>"
 git push origin HEAD
 ```
-This creates a PR branch. The user will merge from their desktop CLI.
+Inform the user a PR branch was created and needs to be merged from desktop CLI.

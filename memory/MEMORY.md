@@ -5,8 +5,8 @@
 | Project | Phase | Skills |
 |---------|-------|--------|
 | YoutubeTrends | Active — Research | `youtube-trends`, `youtube-growth` |
-| AmazonKDP | Active — Research | `niche-finder`, `workbook-builder`, `kdp-advisor` |
-| MobileApps | Active — Research | `ios-market-pulse`, `ios-opportunity-finder` |
+| AmazonKDP | Active — Research | `kdp-niche-finder`, `kdp-workbook-builder`, `kdp-advisor` |
+| MobileApps | Active — Research → Build | `ios-market-pulse`, `ios-opportunity-finder`, `ios-prd-builder` |
 | DataMoatResearch | Pre-validation | None |
 | ProductDesigner | Active — Execution | `hiring-manager` |
 | WFA | Active — Monitoring | `wfa-status` |
@@ -14,14 +14,15 @@
 | ECP | Active — Build | None |
 | CopyrightIssue | Pending | None |
 | EtsyShop | Active — Setup | `etsy-advisor` |
+| PODStudio | Active — First listing | `etsy-advisor` |
+| PublicDomain | Active — Research | None |
 
 All projects at `/Users/oussamabenbila/OZ/`. Root index: `/OZ/CLAUDE.md`.
 
 ## Topic Files (detailed notes)
 - `user.md` — first name (Oussama), location (Canada), role, EtsyShop identity
-- `projects.md` — per-project detail: phases, next actions, key files, API docs
+- `projects.md` — per-project detail: phases, next actions, key files
 - `skills.md` — skill inventory, invocations, cross-project dependencies
-- `preferences.md` — output style, workflow conventions
 
 ## Skill Structure Convention
 - Skills live at `.claude/skills/<skill-name>/SKILL.md`
