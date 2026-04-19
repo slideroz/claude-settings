@@ -75,7 +75,13 @@ Two execution environments with different capabilities:
 
 ## Session Start
 
-**CLI — pull every active project before any work:**
+**CLI — opened inside a project folder (`~/OZ/<Project>/`):**
+```
+git -C ~/OZ/<Project> pull origin main
+git -C ~/claude-settings pull origin main
+```
+
+**CLI — opened inside the OZ portfolio folder (`~/OZ/`):**
 ```
 git -C ~/OZ/YoutubeTrends pull origin main
 git -C ~/OZ/AmazonKDP pull origin main
@@ -93,7 +99,7 @@ git -C ~/claude-settings pull origin main
 ```
 When a new project is added to the Active Projects table, add it to this list.
 
-If merge conflicts in any project: resolve the file, remove conflict markers, `git -C ~/OZ/<Project> add <file>` then commit.
+If merge conflicts: resolve the file, remove conflict markers, `git -C ~/OZ/<Project> add <file>` then commit.
 
 Then:
 1. Read `MEMORY.md` and the active project's `CLAUDE.md`.
