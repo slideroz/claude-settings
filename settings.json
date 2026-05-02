@@ -19,6 +19,6 @@
     "type": "command",
     "command": "bash ~/.claude/statusline.sh"
   },
-  "voiceEnabled": true,
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "voiceEnabled": true
 }
