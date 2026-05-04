@@ -1,13 +1,26 @@
 {
   "permissions": {
     "allow": [
+      "Read",
+      "Write",
+      "Edit",
       "Bash(ln:*)",
       "Bash(~/claude-settings/check.sh:*)",
       "Bash(grep:*)",
-      "Bash(git *)",
-      "Bash(ls /Users/oussamabenbila/.claude/settings*)",
-      "Bash(du -sh ~/.claude/*/)",
-      "Bash(find /Users/oussamabenbila/.claude -type f -name *.md)"
+      "Bash(git:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(chmod:*)",
+      "Bash(python3:*)",
+      "Bash(curl:*)",
+      "Bash(du -sh ~/.claude/*/)"
     ]
   }
 }
