@@ -37,10 +37,10 @@ Applies to every project and session. **Global rules are immutable.** Project CL
 
 | Context bar | Action |
 |-------------|--------|
-| < 50% | Continue freely |
-| 50–55% | Finish current task, then consider `/compact` |
-| 55–65% | Run `/compact [topic]` before starting the next task |
-| ≥ 70% | Stop. Compact or start a new session — do not proceed |
+| < 40% | Continue freely |
+| 40–50% | Finish current task, then consider `/compact` |
+| 50–55% | Run `/compact [topic]` before starting the next task |
+| ≥ 60% | Stop. Compact or start a new session — do not proceed |
 
 **`/compact [focus]`** — keep the session, summarize history, preserve file state.
 **New session (`/clear` or `claude`)** — full reset. Use when task is complete or context ≥ 90%.
