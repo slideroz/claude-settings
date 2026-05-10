@@ -1,0 +1,10 @@
+---
+name: grill-me
+description: Interview the user relentlessly about a task, plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan or project, get grilled on their design, or mentions "grill me".
+---
+
+Interview me relentlessly about every aspect of thi splan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
+
+Ask the question sone at a time.
+
+If a question can be answered by exploring the project or codebase, explore the project or codebase instead.
