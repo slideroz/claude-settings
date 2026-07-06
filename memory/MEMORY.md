@@ -16,6 +16,7 @@
 | EtsyShop | Active — Setup | `etsy-advisor` |
 | PODStudio | Active — First listing | `etsy-advisor` |
 | PublicDomain | Active — Research | None |
+| SandboxPiano | Active — Build | None |
 
 All projects at `/Users/oussamabenbila/OZ/`. Root index: `/OZ/CLAUDE.md`.
 

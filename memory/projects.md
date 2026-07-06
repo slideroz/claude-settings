@@ -68,6 +68,16 @@
 - Path: `/Users/oussamabenbila/OZ/CopyrightIssue/`
 - Phase: Pending
 
+## SandboxPiano
+- Path: `/Users/oussamabenbila/OZ/SandboxPiano/`
+- Repo: `github.com/slideroz/sandbox-piano` (private) — set up 2026-07-06, was previously loose untracked files
+- Phase: Active — Build
+- What it is: piano-improv learning web app, single-file vanilla JS (`index.html`), constraint-based learning method (one key, one progression C-G-Am-F, five safe pentatonic notes)
+- Deploy: `stunning-naiad-017b38.netlify.app`, now wired to git auto-deploy from `main` (linked 2026-07-06, replacing prior manual drag-and-drop)
+- Sessions 0–7 built and scripted; fingering warmup feature (five-finger climb, pentatonic flow, chord stretch) designed but not yet implemented
+- Key doc: `PROJECT_HANDOFF.md` — full method + locked design rules (no falling-notes/Synthesia dictation, dry sampled piano only, 3-screen max, MIDI as mirror not judge)
+- Next actions: implement fingering warmup, decide its UI placement, self-host piano samples
+
 ## EtsyShop
 - Path: `/Users/oussamabenbila/OZ/EtsyShop/`
 - Phase: Active — Setup (Phase 1: POD research + shop prep)
