@@ -20,5 +20,6 @@
     "command": "bash ~/.claude/statusline.sh"
   },
   "effortLevel": "high",
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "tui": "fullscreen"
 }
