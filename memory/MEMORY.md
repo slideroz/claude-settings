@@ -17,6 +17,7 @@
 | PODStudio | Active — First listing | `etsy-advisor` |
 | PublicDomain | Active — Research | None |
 | SandboxPiano | Active — Build | None |
+| TrackerPlatform | Pre-validation | None |
 
 All projects at `/Users/oussamabenbila/OZ/`. Root index: `/OZ/CLAUDE.md`.
 

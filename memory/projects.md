@@ -78,6 +78,15 @@
 - Key doc: `PROJECT_HANDOFF.md` — full method + locked design rules (no falling-notes/Synthesia dictation, dry sampled piano only, 3-screen max, MIDI as mirror not judge)
 - Next actions: implement fingering warmup, decide its UI placement, self-host piano samples
 
+## TrackerPlatform
+- Path: `/Users/oussamabenbila/OZ/TrackerPlatform/`
+- Repo: `github.com/slideroz/tracker-platform` (private) — created 2026-07-15, cloned locally 2026-07-27 (previously only existed on GitHub, built via browser Claude Code sessions)
+- Phase: Pre-validation ("Phase 0" per its own README) — validating a schema pattern spike, no app built yet
+- What it is: a configurable Power Apps tracker shell — one app, multiple tracker types (Consultations, Reporting, ...) defined by config instead of one hardcoded app per use case. Generalizes the pattern proven in `ConsultationTracker` (the live production Consultations app), which serves as pilot tracker type #1.
+- Key doc: `docs/architecture-map.md` — target system, validation ledger, index of every other doc in the repo
+- Working agreements: `CLAUDE.md` in repo root
+- Relationship to ConsultationTracker: informed by it, not a replacement (yet) — ConsultationTracker stays the live production app while this validates the generalized pattern
+
 ## EtsyShop
 - Path: `/Users/oussamabenbila/OZ/EtsyShop/`
 - Phase: Active — Setup (Phase 1: POD research + shop prep)
