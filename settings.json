@@ -2,6 +2,7 @@
   "permissions": {
     "defaultMode": "plan"
   },
+  "model": "sonnet",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -20,6 +21,6 @@
     "command": "bash ~/.claude/statusline.sh"
   },
   "effortLevel": "high",
-  "voiceEnabled": true,
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "voiceEnabled": true
 }
