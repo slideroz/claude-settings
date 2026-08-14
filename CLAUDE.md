@@ -100,6 +100,7 @@ git -C ~/OZ/ConsultationTracker pull origin main
 git -C ~/OZ/ECP pull origin main
 git -C ~/OZ/SandboxPiano pull origin main
 git -C ~/OZ/TrackerPlatform pull origin main
+git -C ~/OZ/TrainingSystem pull origin main
 git -C ~/claude-settings pull origin main
 ```
 When a new project is added to the Active Projects table, add it to this list.
