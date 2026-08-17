@@ -18,6 +18,7 @@
 | PublicDomain | Active — Research | None |
 | SandboxPiano | Active — Build | None |
 | TrackerPlatform | Pre-validation | None |
+| YE | Active — Instrumentation | None |
 
 All projects at `/Users/oussamabenbila/OZ/`. Root index: `/OZ/CLAUDE.md`.
 
@@ -34,6 +35,7 @@ All projects at `/Users/oussamabenbila/OZ/`. Root index: `/OZ/CLAUDE.md`.
 ## Key Feedback
 - `feedback_progress_tracker.md` — progress.md lags behind reality; verify PENDING items with user before citing as blockers
 - `feedback_etsy_titles.md` — run KE on all primary title terms before touching any listing titles (EtsyShop)
+- `feedback_project_isolation.md` — never read another project's content uninvited; projects are isolated by his decision
 
 ## User Preferences
 - No emojis

@@ -109,3 +109,19 @@
   1. Select POD service (compare Printify/Printful/Gelato for paper fine art prints + margin)
   2. Confirm shop name from mixed-genre candidates
   3. Upload first listings (wildlife species + destination travel photos from portfolio)
+
+## YE — Young Engineers Rideau East
+- **Oussama IS the franchisee** — not an outside consultant. Earlier framing as a client engagement was wrong; corrected 2026-08-17.
+- Phase: Active — Instrumentation (pre-system; capturing cost data before building anything)
+- Scale: 16–40 program runs per 3-month session. Operators: owner solo + contract instructors.
+- Franchisor (Young Engineers Franchising Ltd.) mandates brand, curriculum, LEGO kits ONLY — all systems are the franchisee's choice.
+- Booking: **Bookwhen + Stripe**. One payment covers the full 3-month term.
+- **Bookwhen API is read-only and exposes events/locations/tickets/passes only — NO bookings, attendees, or payment data.** Revenue must come from the bookings CSV export or Stripe API. Verified 2026-08-17 against Bookwhen support docs.
+- **Cost data does not exist yet** — no bookkeeping of facility, instructor, transport, or consumables. This is the whole gap.
+- Settled decisions (2026-08-17): contribution margin only (never allocate ads/admin/kit capital); the *run* (one program, one location, one term) is the grain; camps/popups/parties are runs with a `type` field.
+- **Reusability requirement (2026-08-17):** the model must work for any activity business with a program, an instructor, and a facility — not just YE. Implemented as discipline, not architecture: schema stays domain-neutral, domain specifics live in reference-table rows. Four tables: Runs (fact) + Programs / Instructors / Facilities / Equipment (reference). No config engine or abstraction layer until a second business exists.
+- Breakeven is ALREADY calculated in an existing spreadsheet from completed test activities — real evidence that outranks the spec's assumptions. Not yet located or reconciled.
+- Key spec: `docs/run-ledger-spec.md` — knowledge base and capture mechanism in one artifact.
+- Sequence agreed: capture one session of real data → then draw architecture map → then choose technology. Spreadsheet is the correct implementation until ~Dec 2026.
+- Prior UX audit of the franchise site deleted from working tree; recoverable at `git show 53f5e1d:YE/audit_2026-04-20.md`.
+- YE is tracked INSIDE the OZ repo, unlike every other project (which are standalone repos). Unresolved.
