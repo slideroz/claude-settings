@@ -21,6 +21,5 @@
   },
   "effortLevel": "high",
   "tui": "fullscreen",
-  "voiceEnabled": true,
-  "model": "sonnet"
+  "voiceEnabled": true
 }
