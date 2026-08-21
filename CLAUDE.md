@@ -68,7 +68,7 @@ Three execution environments with different capabilities:
 |-|---------------------|---------------|------------|
 | Repo path | `~/OZ/<ProjectName>/` | `/home/user/<repo-name>/` | `/workspaces/<repo-name>/` |
 | Multi-repo access | Yes | No — one repo per session | No — one repo per codespace |
-| claude-settings | `~/claude-settings/` available | Not available | Readable via `GITHUB_TOKEN`, not pushable |
+| claude-settings | `~/claude-settings/` available | Not available | Read-only, at /workspaces/.codespaces/.persistedshare/dotfiles/ via automatic dotfiles install |
 | Push to main | Direct | No — pushes to branch, PR required | Direct |
 | Memory / skills | Full access | Read-only via loaded context | Full — `install.sh` links them |
 
