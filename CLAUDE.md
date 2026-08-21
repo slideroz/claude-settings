@@ -62,17 +62,17 @@ Before adding anything to any CLAUDE.md or memory file: does this belong in a sk
 
 ## Environment
 
-Two execution environments with different capabilities:
+Three execution environments with different capabilities:
 
-| | CLI (local machine) | Web (browser) |
-|-|---------------------|---------------|
-| Repo path | `~/OZ/<ProjectName>/` | `/home/user/<repo-name>/` |
-| Multi-repo access | Yes | No — one repo per session |
-| claude-settings | `~/claude-settings/` available | Not available |
-| Push to main | Direct | No — pushes to branch, PR required |
-| Memory / skills | Full access | Read-only via loaded context |
+| | CLI (local machine) | Web (browser) | Codespaces |
+|-|---------------------|---------------|------------|
+| Repo path | `~/OZ/<ProjectName>/` | `/home/user/<repo-name>/` | `/workspaces/<repo-name>/` |
+| Multi-repo access | Yes | No — one repo per session | No — one repo per codespace |
+| claude-settings | `~/claude-settings/` available | Not available | Readable via `GITHUB_TOKEN`, not pushable |
+| Push to main | Direct | No — pushes to branch, PR required | Direct |
+| Memory / skills | Full access | Read-only via loaded context | Full — `install.sh` links them |
 
-**Detect web:** run `pwd`. If output starts with `/home/user/`, follow Web protocols below.
+**Detect environment:** run `pwd`. Starts with `/home/user/` → Web. Starts with `/workspaces/` (or `$CODESPACE_VSCODE_FOLDER` is set) → Codespaces. Otherwise CLI.
 
 ---
 
@@ -117,6 +117,11 @@ Then:
 1. Pull the current repo only: `git pull origin main` (claude-settings not available — skip)
 2. Read `CLAUDE.md` in the current repo.
 3. Proceed. Do not attempt to access other repos or claude-settings.
+
+**Codespaces:**
+1. Pull the current repo only: `git pull origin main`.
+2. Read `CLAUDE.md` in the current repo.
+3. Proceed. Unlike CLI, there is no portfolio folder here. claude-settings is readable (clone or pull works via the built-in token) but not pushable — useful for reading shared skills/templates, not for syncing changes back.
 
 ---
 
@@ -169,3 +174,5 @@ git commit -m "<Project>: <description>"
 git push origin HEAD
 ```
 Inform the user a PR branch was created and needs to be merged from desktop CLI.
+
+**Codespaces** — commit and push the current repo to main as on CLI. Never commit to claude-settings: it is read-only here, so any change to global config must be redone from desktop CLI.

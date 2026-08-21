@@ -6,7 +6,7 @@ CLAUDE_DIR="$HOME/.claude"
 
 mkdir -p "$CLAUDE_DIR"
 
-files=(settings.json settings.local.json statusline.sh skills commands templates hooks)
+files=(CLAUDE.md settings.json settings.local.json statusline.sh skills commands templates hooks)
 
 for f in "${files[@]}"; do
   target="$CLAUDE_DIR/$f"
@@ -21,15 +21,23 @@ for f in "${files[@]}"; do
   echo "Linked $f"
 done
 
-# Memory — path encodes the OZ project directory location
-MEMORY_PARENT="$HOME/.claude/projects/-Users-$(whoami)-OZ"
-mkdir -p "$MEMORY_PARENT"
-if [ -e "$MEMORY_PARENT/memory" ] && [ ! -L "$MEMORY_PARENT/memory" ]; then
-  echo "Backing up existing memory → $MEMORY_PARENT/memory.bak"
-  mv "$MEMORY_PARENT/memory" "$MEMORY_PARENT/memory.bak"
-fi
-ln -sf "$REPO_DIR/memory" "$MEMORY_PARENT/memory"
-echo "Linked memory"
+link_memory() {
+  local dir="$1"
+  [ -d "$dir" ] || return 0
+  local slug parent
+  slug="$(printf '%s' "$dir" | tr './' '--')"
+  parent="$HOME/.claude/projects/$slug"
+  mkdir -p "$parent"
+  if [ -e "$parent/memory" ] && [ ! -L "$parent/memory" ]; then
+    echo "Backing up existing memory → $parent/memory.bak"
+    mv "$parent/memory" "$parent/memory.bak"
+  fi
+  ln -sf "$REPO_DIR/memory" "$parent/memory"
+  echo "Linked memory for $dir"
+}
+
+link_memory "$HOME/OZ"
+[ -n "$CODESPACE_VSCODE_FOLDER" ] && link_memory "$CODESPACE_VSCODE_FOLDER"
 
 echo ""
 echo "Done. Claude settings installed."
