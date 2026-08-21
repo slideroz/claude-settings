@@ -70,7 +70,7 @@ Three execution environments with different capabilities:
 | Multi-repo access | Yes | No — one repo per session | No — one repo per codespace |
 | claude-settings | `~/claude-settings/` available | Not available | Read-only, at /workspaces/.codespaces/.persistedshare/dotfiles/ via automatic dotfiles install |
 | Push to main | Direct | No — pushes to branch, PR required | Direct |
-| Memory / skills | Full access | Read-only via loaded context | Full — `install.sh` links them |
+| Memory / skills | Full access | Read-only via loaded context | Full, once install.sh has run — either manually or via dotfiles auto-install at creation |
 
 **Detect environment:** run `pwd`. Starts with `/home/user/` → Web. Starts with `/workspaces/` (or `$CODESPACE_VSCODE_FOLDER` is set) → Codespaces. Otherwise CLI.
 
