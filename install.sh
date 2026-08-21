@@ -17,7 +17,7 @@ for f in "${files[@]}"; do
     mv "$target" "$target.bak"
   fi
 
-  ln -sf "$source" "$target"
+  ln -sfn "$source" "$target"
   echo "Linked $f"
 done
 
@@ -32,7 +32,7 @@ link_memory() {
     echo "Backing up existing memory → $parent/memory.bak"
     mv "$parent/memory" "$parent/memory.bak"
   fi
-  ln -sf "$REPO_DIR/memory" "$parent/memory"
+  ln -sfn "$REPO_DIR/memory" "$parent/memory"
   echo "Linked memory for $dir"
 }
 
